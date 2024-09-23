@@ -45,7 +45,7 @@ func RunExecutable(executableBytes []byte, args []string) (string, error) {
 		"b" + hex.EncodeToString(executableBytes), // The actual PE to load
 		"z",                                  // for local PE loading, we don't need it
 		"i0",                                 // not doing local loading
-		"i60",                                // 60 second timeout
+		"i0",                                // 60 second timeout
 		"i0",                                 // no headers
 		"Z" + strings.Join(updatedArgs, " "), // Unicode Args
 		"z" + strings.Join(updatedArgs, " "), // ANSI Args
